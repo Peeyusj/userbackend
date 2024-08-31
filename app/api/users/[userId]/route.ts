@@ -1,9 +1,6 @@
 import { db } from "@/db";
-// import { newsArticle } from "@/db/schemas/news";
-import { and, eq, ne } from "drizzle-orm";
-import { category, newsArticle } from "@/db/schemas/news";
-import { getToken } from "next-auth/jwt";
-import { NextResponse } from "next/server";
+import { eq } from "drizzle-orm";
+
 import { users } from "@/db/schemas";
 
 type Params = {

@@ -1,26 +1,11 @@
 import { db } from "@/db";
-// import { newsArticle } from "@/db/schemas/news";
-import { and, eq, ne } from "drizzle-orm";
-import { category, newsArticle } from "@/db/schemas/news";
-import { getToken } from "next-auth/jwt"
-import { NextResponse } from "next/server";
+import {  eq } from "drizzle-orm";
 import { roles } from "@/db/schemas";
 
 type Params = {
   roleId: number;
 };
 
-interface NewsArticleSchema {
-  content: string;
-  markdownContent: string;
-  title: string;
-  description: string;
-  imgSrc?: string;
-  category_id: string;
-  priority: number;
-  author: string;
-  tags:string []
-}
 
 export async function GET(req: Request, context: { params: Params }) {
   try {
@@ -47,49 +32,6 @@ export async function GET(req: Request, context: { params: Params }) {
   }
 }
 
-export async function PUT(req: Request, context: { params: Params }) {
-  try {
-
-
-    const id = context.params.roleId; // '
-
-    const {
-      content,
-      markdownContent,
-      title,
-      description,
-      imgSrc,
-      category_id,
-      priority,
-      author,
-      tags
-    } = (await req.json()) as NewsArticleSchema;
-
-    await db
-      .update(newsArticle)
-      .set({
-        content,
-        markdownContent,
-        title,
-        description,
-        imgSrc,
-        category: Number(category_id),
-        priority,
-        author,
-        // tags
-      })
-      .where(eq(newsArticle.id, id));
-
-    return Response.json({
-      success: true,
-      message: "Article Updated Successfully",
-    });
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error(e);
-    return Response.error();
-  }
-}
 
 export async function PATCH(req: Request, context: { params: Params }) {
   try {
