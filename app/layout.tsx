@@ -1,7 +1,5 @@
-import "@uploadthing/react/styles.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";;
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Next Shadcn",
@@ -13,14 +11,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en" suppressHydrationWarning>
-      <body >
-        
-          {children}
-       
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
