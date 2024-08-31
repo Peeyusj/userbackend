@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1721578018620,
+      "tag": "0000_lonely_the_spike",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1725070797170,
+      "tag": "0001_lame_captain_cross",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1725103376500,
+      "tag": "0002_awesome_jazinda",
+      "breakpoints": true
+    }
+  ]
+}
