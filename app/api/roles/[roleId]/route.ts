@@ -22,7 +22,7 @@ export async function GET(req: Request, context: { params: Params }) {
 
     return Response.json({
       success: true,
-      message: "Article Created Successfully",
+      message: "Article Created Successfully ",
       data: result,
     });
   } catch (e) {
