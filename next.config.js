@@ -22,8 +22,7 @@ const nextConfig = {
         hostname: "**",
       },
     ],
-  },
-  distDir: 'build'
+  }
 };
 
 module.exports = nextConfig;
