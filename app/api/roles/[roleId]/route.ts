@@ -10,7 +10,7 @@ type Params = {
 export async function GET(req: Request, context: { params: Params }) {
   try {
 
-    const id = context.params.roleId; //
+    const id = context.params.roleId; 
 
     const result = await db.query.roles.findFirst({
       where: (roles) => eq(roles.id, id),
